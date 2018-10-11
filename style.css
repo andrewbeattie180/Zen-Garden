@@ -1,22 +1,88 @@
-body {
-    width: = 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #000000;
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body{
+    padding:0;
+    margin:0;
+}
+body{
+    color: #325050;
+    background: #ffffff;
+    font-family: "Libre Baskerville", sans-serif;
+    font-size: 70%;
+}
+
+header{
+    height: 230px;
+    padding: 20px 0 70px 0;
+    background: #2d6360 50% 0 url(http://www.csszengarden.com/214/huntington.jpg) no-repeat;
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-image: url(http://www.csszengarden.com/214/contours.png),
+    url(http://www.csszengarden.com/214/noise.png),
+    url(http://www.csszengarden.com/214/gridlines.png),
+    url(http://www.csszengarden.com/214/huntington.jpg);
+    background-position: 0 0, 0 0, -5px, -25px, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto, auto, auto, cover;
+    text-align: center;
+}
+
+h1{
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 3.2em;
+    text-transform: uppercase;
+}
+
+h1, h2{
+    padding: 0 10%;
+    margin: 0;
+    color: #ffffff;
+    font-weight:normal;
+}
+
+h1::before{
+    display: inline-block;
+    position: relative;
+    top:20%;
+    content: "";
+    width:80px;
+    height:80px;
+    margin:-20px 20px 0 0;
+    background: url(http://www.csszengarden.com/214/enso.svg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    opacity:0.6;
+}
+
+h2{
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-top:none;
+    color:#fff9;
+    font-size:1.6em;
+    font-style: italic;
+}
+
+abbr{
+    border:none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.01.em;
+}
+.pagewrapper {
+    position: relative;
     
 }
 
-.page-wrapper{
-    display: flex;
-    justify-content: center;
-    height: 800px;
-    perspective: 400px;
-    color: #feda4a;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 500%;
-    font-weight: 600;
-    letter-spacing: 6px;
-    line-height: 150%;
-    text-align: justify
+.intro {
+    display: block;
 
 }
