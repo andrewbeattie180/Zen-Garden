@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
-
+@import url(../Zen-Garden/verdemoderna.svg);
 *{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -74,7 +74,14 @@ h2::before{
     padding:50px;
     content:" ";
 }
-
+h3{
+    margin: 2em 0 0 0;
+    color: #2e484c;
+    font-family:'Julius Sans One', sans-serif;
+    font-size: 1.8em;
+    font-weight:normal;
+    text-transform: uppercase;
+}
 abbr{
     border:none;
     text-transform: uppercase;
@@ -85,14 +92,48 @@ abbr{
     width:80%;
     margin: 0 auto;
 }
+.supporting h3, .supporting p{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .summary{
     padding-top: 2em;
 }
+.supporting .requirements{
+    float:none;
+    clear:both;
+    width:100%;
+    padding-left:0;
+    padding-right:0;
 
+}
+.supporting .requirements a{
+    text-decoration: none;
+}
+div.participation, div.benefits{
+    background-attachment: scroll, scroll, fixed;
+    background-color: #8abc9f80;
+    background-image: url(http://www.csszengarden.com/214/contours-opaque.png),url(http://www.csszengarden.com/214/gridlines-opaque.png),url(http://www.csszengarden.com/214/bamboo.png);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size:  auto, auto, cover;
+}
+div.participation{
+    padding:3em 0;
+    margin-top:3em;
+}
+div.benefits{
+    padding-bottom: 3em;
+    margin-bottom:3em;
+}
+
+div.participation h3, div.benefits h3{
+    margin-top:0;
+}
 .intro a, .intro a:visited{
     position: relative;
     display:inline-block;
-    padding: 1px 10px 1px 6px;
+    padding: 1px 10px 1px 32px;
     margin: -1px -10px -1px -6px;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
@@ -111,6 +152,93 @@ a{
     transition: all 0.25s ease-out;
     text-decoration:none;
 }
+.intro a:hover, .intro a:focus{
+    z-index: 2;
+    color: #fff;
+    background: #3d8a9f;
+    text-decoration: none;
+}
+.intro a::before {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    padding: 2px;
+    color:#a9b995;
+    background: #d9e1cd;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    content:"D";
+    font-size:16px;
+    text-indent:0;
+    font-family: 'verdemoderna';
+    speak: none;
+    font-weight: normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.intro a:hover::before{
+    color: #fff;
+    background: #357d93;
+  }
+a:hover, a:focus{
+    color:#0599c2;
+    text-decoration: underline;
+
+}
+
+footer{
+    clear:both;
+    padding: 3em 10%;
+    color: #fff;
+    background: #134347;
+    text-align: center;
+}
+footer a:visited{
+    color:#fff3;
+}
+footer a{
+    display: inline-block;
+    overflow:hidden;
+    width:40px;
+    height: 40px;
+    padding: 40px 0 0 0;
+    margin: 0 0.5em;
+    position: relative;
+    color: #ffffff80;
+    -webkit-transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+    -moz-transition:color 0.25s ease-out, box-shadow 0.25s ease-out;
+    transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.requirements p:last-child{
+    width: auto;
+    padding: 1em 12%;
+    margin: 0;
+    color:#fff6;
+    background:#3e5d67;
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-image:url(http://www.csszengarden.com/214/contours@2px.png),
+    url(http://www.csszengarden.com/214/noise.png),
+    url(http://www.csszengarden.com/214/gridlines.png),url(http://www.csszengarden.com/214/koi.jpg);
+    background-position: 0 0, -5px -25px, 0 0, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto, auto, auto, cover;
+    font-size: 2em;
+    font-style: italic;
+    text-align:center;
+}
+.requirements p:last-child a{
+    color:#ffffffb3;
+    font-style:normal;
+}
+
 @media only screen and (max-width:1132px){
     header{
         border-top:solid 10px rgba(19, 67,71,0.9);
@@ -175,5 +303,28 @@ not all, (min-resolution:1.5dppx){
         url(http://www.csszengarden.com/214/gridlines.png),
         url(http://www.csszengarden.com/214/huntington.jpg);
         background-size: 50% auto, auto, auto, cover;
+    }
+}
+
+@media not all, not all, (-webkit-min-device-pixel-ratio:1.5), not all, (min-resolution:1.5dppx){
+.requirements p:last-child{
+background-image:url(http://www.csszengarden.com/214/contours@2x.png),url(http://www.csszengarden.com/214/gridlines.png),url(http://www.csszengarden.com/214/noise.png),url(http://www.csszengarden.com/214/koi.jpg);
+background-size: 50% auto, auto, auto, cover;
+}
+}
+
+@media only screen and (max-width: 1150px) and (min-width:500px){
+    .requirements p:last-child{
+        padding-bottom:2em;
+        padding-top:2em;
+    }
+    footer{
+        padding:3em 0;
+    }
+    footer a{
+        width:52px;
+        height: 52px;
+        padding: 52px 0 0 0;
+        margin: 0 2em;
     }
 }
