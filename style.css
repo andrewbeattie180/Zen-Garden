@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
-@import url(../Zen-Garden/verdemoderna.svg);
 *{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -16,6 +15,13 @@ body{
     font-size: 70%;
 }
 
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
 header{
     height: 230px;
     padding: 20px 0 70px 0;
@@ -133,7 +139,7 @@ div.participation h3, div.benefits h3{
 .intro a, .intro a:visited{
     position: relative;
     display:inline-block;
-    padding: 1px 10px 1px 32px;
+    padding: 1px 10px 1px 6px;
     margin: -1px -10px -1px -6px;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
@@ -169,9 +175,8 @@ a{
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
-    content:"D";
     font-size:16px;
-    text-indent:0;
+    text-indent: 0;
     font-family: 'verdemoderna';
     speak: none;
     font-weight: normal;
@@ -193,6 +198,14 @@ a:hover, a:focus{
     text-decoration: underline;
 
 }
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
 
 footer{
     clear:both;
@@ -201,9 +214,7 @@ footer{
     background: #134347;
     text-align: center;
 }
-footer a:visited{
-    color:#fff3;
-}
+
 footer a{
     display: inline-block;
     overflow:hidden;
@@ -216,6 +227,103 @@ footer a{
     -webkit-transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
     -moz-transition:color 0.25s ease-out, box-shadow 0.25s ease-out;
     transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+footer a::before {
+    display: block;
+    position:absolute;
+    top: 3px;
+    left: 0;
+    overflow: visible;
+    font-size: 36px;
+    text-indent: 0;
+    font-family: 'verdemoderna';
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height:1;
+    -webkit-font-smoothing: antialiased;
+}
+footer a:hover, footer a:focus {
+    color: #ffffff4d;
+    text-decoration: none;
+}
+footer a:visited{
+    color:#fff3;
+}
+a:hover a:focus{
+    color:#0599c2;
+    text-decoration: underline;
+}
+
+.sidebar{
+    background: #edf4f0;
+}
+.sidebar a{
+    color:#607476;
+    text-decoration: none;
+}
+.design-selection h3{
+    display:none;
+}
+
+.sidebar h3 {
+display: none;
+}
+.sidebar ul{
+    padding:0;
+    margin:0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.design-selection li:nth-child(2n+1), .zen-resources li {
+    padding: 1em 5%;
+}
+.design-selection li:nth-child(2n+1), .zen-resources li:nth-child(2n+1) {
+    clear:left;
+}
+.design-selection ul, .zen-resources ul {
+    margin:0;
+}
+.design-selection li, .zen-resources li{
+    float: left;
+    width: 50%;
+    padding:1.5em 10%;
+    border-top: solid 1px #d9e3dc;
+    color: #c0cac3;
+    font-style: italic;
+
+}
+.design-selection .designer-name {
+    color: #616857;
+    font-size:0.9em;
+    font-style: normal;
+}
+
+.design-archives {
+    position: absolute;
+    top: 160px;
+    right:0;
+    width: 100%;
+    height: 70px;
+    background: #fff3;
+}
+.design-archives h3 {
+    display: none;
+}
+
+.design-archives li{
+    position: absolute;
+    top:0;
+    padding: 0;
+    margin:0;
+    border:none;
+    list-style:none;
+}
+.sidebar a:hover, .sidebar a:focus {
+    color:#49968e;
 }
 .requirements p:last-child{
     width: auto;
@@ -238,7 +346,73 @@ footer a{
     color:#ffffffb3;
     font-style:normal;
 }
+.previous, .next{
+    left:0;
+    z-index: 3;
+}
+.next{
+    left: auto;
+    right: 0;
+}
+.design-archives .previous a, .design-archives .next a{
+    display: block;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    text-indent: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.design-archives li.viewall {
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 0 71px;
+    line-height: 50px;
+}
+.design-archives .viewall a{
+    z-index:2;
+    width: 100%;
+    min-height: 70px;
+    padding:12px 0 0 0;
+    text-align: center;
+}
+.zen-resources{
+    overflow:hidden;
+    background-color: #8abc9f80;
+    background-image: url(http://www.csszengarden.com/214/bamboo.png);
+}
+.design-selection .design-name, .zen-resources a, li.viewall a{
+    display:block;
+    margin-bottom: 0.25em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    font-style:normal;
+    text-transform:uppercase;
+}
+.design-archives a, .design-archives a:visited{
+    color:#ffffffa6;
+}
 
+.design-archives .next a::before {
+    content:">";
+}
+.design-archives a::before {
+    position: absolute;
+    left:0;
+    width:70px;
+    height: 70px;
+    text-align:center;
+    text-indent: 0;
+    font-size:44px;
+    font-family:'verdemoderna';
+    speak: none;
+    font-weight: normal;
+    font-variant: none;
+    text-transform: none;
+    line-height: 70px;
+    -webkit-font-smoothing: antialiased;
+}
 @media only screen and (max-width:1132px){
     header{
         border-top:solid 10px rgba(19, 67,71,0.9);
@@ -251,6 +425,215 @@ footer a{
         line-height:2;
     }
 }
+@media only screen and (min-width: 1132px) {
+    body {
+      background: #ffffff;
+      background: -moz-linear-gradient(left,  #ffffff 0%, #ffffff 66%, #e5ede8 66%, #e5ede8 100%);
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(66%,#ffffff), color-stop(66%,#e5ede8), color-stop(100%,#e5ede8));
+      background: -webkit-linear-gradient(left,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      background: -o-linear-gradient(left,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      background: -ms-linear-gradient(left,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      background: linear-gradient(to right,  #ffffff 0%,#ffffff 66%,#e5ede8 66%,#e5ede8 100%);
+      font-size: 100%;
+    }
+    header {
+      width: 100%;
+      height: 310px;
+      padding: 0 10%;
+      border-top: solid 12px rgba(19, 67, 71, 0.8);
+      box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.3);
+      vertical-align: middle;
+      text-align: left;
+    }
+  
+    header::before, header::after {
+      display: block;
+      content: " ";
+      position: absolute;
+      z-index: 3;
+      top: 9px;
+      left: 0;
+      width: 100%;
+      height: 7px;
+      background: rgba(0, 39, 43, 0.2);
+    }
+    header::after {
+      top: 306px;
+      height: 4px;
+      background: rgba(0, 39, 43, 0.075);
+    }
+    h1 {
+      display: inline-block;
+      position: relative;
+      margin: 15px 0 0 0;
+      padding: 60px 0 5px 0;
+    }
+    h1::before {
+      display: inline-block;
+      position: relative;
+      top: 65px;
+      content: "";
+      width: 125px;
+      height: 125px;
+      margin: -65px 40px 0 0;
+      background: url(enso.svg);
+      background-size: 100%;
+      opacity: 0.6;
+  
+      -webkit-animation: koan 36000s infinite alternate;
+      -moz-animation: koan 36000s infinite alternate;
+      animation: koan 36000s infinite alternate;
+    }
+    h2 {
+      display: block;
+      margin: 0;
+      padding: 5px 0 60px 70px;
+    }
+    p {
+      font-size: 1em;
+    }
+  
+    /* main layout blocks */
+    nav, .supporting {
+      display: inline;
+    }
+    .summary, .preamble, .supporting div, .requirements h3, .requirements p {
+      float: left;
+      clear: left;
+      width: 66%;
+      padding: 1em 5% 1em 10%;
+    }
+    .explanation h3, .explanation p,
+    .participation h3, .participation p,
+    .benefits h3, .benefits p {
+      width: 100%;
+    }
+    .summary {
+      padding-top: 3.25em;
+    }
+    .requirements h3, .requirements p {
+      margin: 0;
+      padding-bottom: 0;
+    }
+  
+  
+    /* coloured cutoff */
+    div.participation, div.benefits {
+      width: 100%;
+      padding-left: 10%;
+      padding-right: 38%;
+      margin: 0;
+    }
+    /* extra padding at the cutoffs */
+    div.participation, div.requirements {
+      padding-top: 4em;
+    }
+    div.explanation, div.benefits {
+      padding-bottom: 4em;
+    }
+    .requirements p:nth-child(5) {
+      padding-bottom: 4em;
+    }
+  
+  
+    .intro h3, .supporting h3 {
+      margin-top: 0;
+    }
+    .intro p:last-child, .supporting p:last-child {
+      margin-bottom: 0;
+    }
+  
+  
+    .requirements p:last-child {
+      padding-bottom: 3em;
+      padding-top: 3em;
+      box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.3);
+    }
+  
+  
+    /* sidebar styling */
+    .design-selection, .zen-resources {
+      position: absolute;
+      top: 360px;
+      right: 0;
+      width: 33.3%;
+      padding: 0 0 20px 0;
+      margin: 0;
+      overflow: visible;
+      background: transparent;
+    }
+    .sidebar li {
+      float: none;
+      width: auto;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 29.4% 0 14.7%; /* 0 10% 0 5% of total width */
+    }
+  
+  
+    /* select a design */
+    .design-selection li:first-child {
+      border-top: 0;
+    }
+    .design-selection li:hover, .design-selection li:focus {
+      background: none;
+    }
+  
+    /* archives navigation */
+    .design-archives {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 310px;
+  
+      background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 66%, rgba(0,0,0,0.2) 66%, rgba(33,84,95,0.3) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(66%,rgba(255,255,255,0)), color-stop(66%,rgba(33,84,95,0.3)), color-stop(100%,rgba(33,84,95,0))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 66%,rgba(33,84,95,0.3) 66%,rgba(33,84,95,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 66%,rgba(33,84,95,0.3) 66%,rgba(33,84,95,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 66%,rgba(33,84,95,0.3) 66%,rgba(33,84,95,0) 100%); /* IE10+ */
+      background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 66%,rgba(33,84,95,0.3) 66%,rgba(33,84,95,0) 100%); /* W3C */
+    }
+    .design-archives nav {
+      display: block;
+      position: absolute;
+      right: 1%;
+      top: 120px;
+      width: 32%;
+    }
+    .design-archives li {
+      margin: 0;
+    }
+    .design-archives .viewall a, .design-archives a::before {
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+  
+    .design-archives .viewall a:hover, .design-archives a:hover::before {
+      background-color: rgba(255,255,255,0.2);
+    }
+    .zen-resources {
+      position: absolute;
+      top: 1310px;
+      right: 0;
+      width: 34%;
+      background: transparent;
+    }
+    .zen-resources h3 {
+      display: none;
+    }
+    .zen-resources ul {
+      width: 55.9%;
+      margin: 0 29.4% 0 14.7%;
+    }
+    .zen-resources li {
+      padding: 1.5em 0 1.25em 0;
+      margin: 0;
+    }
+  
+  }
+  
 
 @media only screen and (max-width:600px){
     .summary p:last-child{
@@ -291,11 +674,31 @@ footer a{
 
         padding:0;
     }
+    footer a{
+        margin: 0 0.5em;
+    }
+    .design-selection li, .zen-resources li {
+        padding: 1em 5%;
+    }
+    .design-archives {
+        top: 180px;
+    }
+}
+@media only screen and (max-width:320px){
+    footer a{
+        width:35px;
+        height:35px;
+        padding: 35px 0 0 0;
+        margin: 0 0.5em;
+    }
+    .design-selection li, .zen-resources li {
+        float: none;
+        width: 100%;
+    }
 }
 
-
 @media not all, not all,
-(-webkit-min-device-pixel0ration:1.5),
+(-webkit-min-device-pixel-ration:1.5),
 not all, (min-resolution:1.5dppx){
     header{
         background-image: url(http://www.csszengarden.com/214/contours@2px.png),
@@ -303,6 +706,10 @@ not all, (min-resolution:1.5dppx){
         url(http://www.csszengarden.com/214/gridlines.png),
         url(http://www.csszengarden.com/214/huntington.jpg);
         background-size: 50% auto, auto, auto, cover;
+    }
+    .design-archives nav {
+        right: 3%;
+        width: 29%;
     }
 }
 
